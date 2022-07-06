@@ -38,8 +38,13 @@ export const user = async (req,res) => {
 }
 
 export const userUpdate = async (req,res) => {
-    const updatedUser = await userModel.findOne(req.body.id,req.body)
+    const updatedUser = await userModel.findOne(req.body.name,req.body)
     res.status(201).render('index')
+}
+
+// delete user.......
+export const deleteUser = (req,res) => {
+
 }
 
 
