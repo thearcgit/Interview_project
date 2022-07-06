@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(204, 220, 218);">
+
+    {{>header}}
+
+    <h1>Update Page</h1>
+           
+
+      <form action="/update" style="display: flex;justify-content:center" >
+        <fieldset>
+            <legend>Registration Form</legend>
+
+
+            <label for="userName">Name</label>
+            <input type="text" name="name" id="userName" value={{req.params.name}}><br><br>
+
+            <label for="useremail">Email</label>
+            <input type="text" name="email" id="useremail"><br><br>
+
+            <label for="phone">Phone</label>
+            <input type="number" name="phone" id="phone"><br><br>
+            
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" max="25"><br><br>
+
+            <label for="date">DOB</label>
+            <input type="date" name="date" id="date" max=""><br><br>
+
+            <button type="submit">Save</button>
+
+        </fieldset>
+    </form>
+    
+</body>
+</html>

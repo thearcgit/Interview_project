@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(204, 220, 218);">
+
+    {{>header}}
+
+    <h1>Get User</h1>
+
+   <form action="/getuser" method="POST" style="display: flex;justify-content:center" >
+
+   <label for="user">Name:</label>
+   <input type="text" id="user" name="user" placeholder="Type a name" >
+
+   <button type="submit">Get User</button>
+    
+
+   </form>
+    
+</body>
+</html>
