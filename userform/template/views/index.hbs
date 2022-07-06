@@ -22,15 +22,15 @@
         </fieldset><br><br>
     </form><br><br>
 
-     <form action="" id=""  style="display: flex;justify-content:center">
+     <form action="/delete" method="POST" id=""  style="display: flex;justify-content:center">
         <fieldset>
             <label for="search">Search:</label>
             <input type="text" id="search" placeholder="Type Name" name="user">
 
-            <button id="btn1"><a href="/update">Update User</a></button>
+            <button id="btn1">Delete User</button>
     
         </fieldset><br><br>
-    </form><br><br>
+    </form><br>
 
 
     <div style="display: flex;justify-content:center">
@@ -40,33 +40,6 @@
 
 
     
-
-
-    
-    <main style="display: flex;justify-content:center">
-        <section>
-            <h2 class="home">User List</h2>
-            <div>
-                <div class="data">
-                    <input type="text" class="text" readonly>
-                    <button id="btn2" class="edit btn" onclick="click()" >Edit</button>
-                    <button class="delete btn" onclick="click()">Delete</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-
-    <script >
-    
-
-    function click(){
-        alert('clicked')
-    }
-
-   
-    
-    </script>
     
     
 </body>

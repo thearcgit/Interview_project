@@ -43,13 +43,22 @@ export const userUpdate = async (req,res) => {
 }
 
 // delete user.......
-export const deleteUser = (req,res) => {
-
+export const deleteUser = async (req,res) => {
+    try {
+        const deletedUser = await userModel.deleteOne(req.params.name)
+        res.status(200).render('index')
+    } catch (error) {
+        console.log('delete error is',error)        
+    }
 }
 
 
 export const homePage = (req,res,next) => {
     res.render('index')
+}
+
+export const deletePage = (req,res,next) => {
+    res.render('delete')
 }
 
 
