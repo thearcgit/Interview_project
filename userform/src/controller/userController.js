@@ -30,7 +30,7 @@ export const register = async (req,res,next) => {
 
 export const getuser = async (req,res) => {
     const getUser = await userModel.findOne(req.params.name)
-    res.status(201).send(getUser)
+    res.status(201).render('index',{user:getUser})
 }
 
 export const user = async (req,res) => {    
@@ -53,8 +53,9 @@ export const deleteUser = async (req,res) => {
 }
 
 
-export const homePage = (req,res,next) => {
-    res.render('index')
+export const homePage =async (req,res,next) => {
+    const registerdUser = await userModel.find()
+    res.render('index',{users:registerdUser})
 }
 
 export const deletePage = (req,res,next) => {

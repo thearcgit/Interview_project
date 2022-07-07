@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>User List</title>
 </head>
-<body style="background-color: rgb(204, 220, 218);">
-
+<body>
     {{>header}}
 
-    <h1>Registration Page</h1>
-           
+   <h1 id="home-page" style="text-align: center;">Home Page</h1>
 
-      <form action="/register" method="POST" enctype="multipart/form-data" style="display: flex;justify-content:center">
+   {{!-- Registration Form --}}
+
+   <form action="/register" method="POST" enctype="multipart/form-data" style="display: flex;justify-content:center">
         <fieldset>
             <legend>Registration Form</legend>
 
@@ -36,7 +37,35 @@
             <button type="submit">Save</button>
 
         </fieldset>
-    </form>
+    </form><br>
+
+    {{!-- Getting user    --}}
+
+    <form action="/getuser" id="data-list" method="POST" style="display: flex;justify-content:center">
+        <fieldset>
+            <label for="search">Search:</label>
+            <input type="text" id="search" placeholder="Type Name" name="user">
+
+            <button id="">Get User</button>
+    
+        </fieldset><br><br>
+    </form><br><br> 
+
+
+
+    <div class="users-data">
+        {{#each users}}
+        <div class="users-data-child">
+            <input type="text" value={{this.name}} name >
+        </div>
+        {{/each}}
+        
+    </div>
+    
+
+
+    
+    
     
 </body>
 </html>

@@ -1,3 +1,24 @@
-#home{
-    color: red;
+
+body{
+    background-color: rgb(206, 222, 218);
+}
+
+.users-data{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    gap: 5px;
+    background-color: rgb(167, 138, 193);
+    max-width: 500px;
+    /* align-self: center; */
+    border-radius: 5px;
+   
+    align-content: space-around;
+
+}
+
+.users-data-child{
+    border-radius: 5px;
+    background-color: rgb(148, 103, 103);
+    margin: 2px;
 }

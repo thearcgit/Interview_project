@@ -1,6 +1,5 @@
 import express from 'express'
 import hbs from 'hbs'
-import path from 'path'
 import router from './routes/userRoutes.js'
 import database from './dbConnection/db.js'
 import logger from 'morgan'
@@ -17,30 +16,26 @@ const app = express()
 // database Connection ......
 database(process.env.DATABASE)
 
-const upload = multer()
-
+// middlewares..............
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(logger('dev'))
 
 
-const staticPath = path.join(process.cwd(),'public')
-// console.log(staticPath)
-
-const templatePath = path.join(process.cwd(),'template/views')
-// console.log(templatePath)
-
-const partialsPath = path.join(process.cwd(),'template/partials')
-// console.log(partialsPath)
-
+// Parsing multipart/form-data.........
+const upload = multer()
 app.use(upload.array())
-app.use(express.static(staticPath))
 
+// Static Files Settings...........
+app.use(express.static('public'))
+
+
+// Template Engine Settings.......
 app.set('view engine','hbs')
-app.set('views',templatePath)
-hbs.registerPartials(partialsPath)
+app.set('views','templates/views')
+hbs.registerPartials('templates/partials')
 
-
+// Router middleware...........
 app.use(router)
 
 
