@@ -11,6 +11,7 @@
     {{>header}}
 
    <h1 id="home-page" style="text-align: center;">Home Page</h1>
+   <h3>{{updatedUser}}</h3>
 
    {{!-- Registration Form --}}
 
@@ -46,26 +47,37 @@
             <label for="search">Search:</label>
             <input type="text" id="search" placeholder="Type Name" name="user">
 
-            <button id="">Get User</button>
+            <button id="" >Get User</button>
     
         </fieldset><br><br>
     </form><br><br> 
+    <div>
+       
+    </div>
 
 
+    {{!-- Added user List --}}
 
+   <div class="users-data1">
     <div class="users-data">
         {{#each users}}
-        <div class="users-data-child">
-            <input type="text" value={{this.name}} name >
+        <div class="users-data2">
+            <div class="users-data-child">
+                <P>id:{{this.id}}</P>             
+                <P>name:{{this.name}}</P>             
+                <P>age:{{this.age}}</P>             
+                <P>email:{{this.email}}</P>             
+                <P>phone:{{this.phone}}</P>                        
+            </div>
+            <div class="btn">
+                <button><a href="/update/{{this.id}}">Edit</a></button>
+                <button><a href="/delete/{{this.id}}">Delete</a></button>
+            </div>
         </div>
+       
         {{/each}}
         
     </div>
-    
-
-
-    
-    
-    
+   </div>    
 </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    {{>header}}
+
+    <h1>Update Page</h1>
+           
+
+      <form action="/update/{{updateUser.id}}" method="POST" enctype="multipart/form-data"  style="display: flex;justify-content:center">
+        <fieldset>
+            <legend>Update Form</legend>
+
+
+            <label for="userName">Name</label>
+            <input type="text" name="name" id="userName" value={{updateUser.name}}><br><br>
+
+            <label for="useremail">Email</label>
+            <input type="text" name="email" id="useremail" value={{updateUser.email}}><br><br>
+
+            <label for="phone">Phone</label>
+            <input type="number" name="phone" id="phone" value={{updateUser.phone}}><br><br>
+            
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" max="25" value={{updateUser.age}}><br><br>
+
+            <label for="date">DOB</label>
+            <input type="date" name="date" id="date" max="" value={{updateUser.DOB}}><br><br>
+
+            <button type="submit">Save</button>
+
+        </fieldset>
+    </form>
+    
+</body>
+</html>

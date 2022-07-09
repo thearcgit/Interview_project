@@ -3,6 +3,13 @@ body{
     background-color: rgb(206, 222, 218);
 }
 
+.users-data1{
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
 .users-data{
     display: flex;
     flex-direction: column; 
@@ -18,7 +25,28 @@ body{
 }
 
 .users-data-child{
+    
     border-radius: 5px;
-    background-color: rgb(148, 103, 103);
-    margin: 2px;
+    background-color: whitesmoke;
+    margin: 5px;
+    padding: 5px;
+
 }
+.users-data-child p{
+    margin: 0px;
+    padding: 0;
+    /* color: whitesmoke; */
+}
+.users-data2{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
