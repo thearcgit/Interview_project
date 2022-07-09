@@ -14,7 +14,8 @@ dotenv.config()
 const app = express()
 
 // database Connection ......
-database(process.env.DATABASE)
+const dbURI = process.env.DATABASE || "mongodb://localhost:27017/userForm" 
+database(dbURI)  
 
 // middlewares..............
 app.use(bodyParser.json())

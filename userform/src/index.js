@@ -8,7 +8,7 @@ dotenv.config()
 
 const server = http.createServer(app)
 
-const port = process.env.PORT
+const port = process.env.PORT || 5050
 
 
 server.listen(port,()=>{
